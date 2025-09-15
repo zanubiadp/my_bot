@@ -1,28 +1,28 @@
 <?xml version="1.0" ?>
-<sdf version="1.7">
-  <world name="empty">
 
-    <!-- Physics -->
+<sdf version="1.6">
+  <world name="empty">
     <physics name="1ms" type="ignored">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
-
-    <!-- Core Gazebo Sim systems -->
     <plugin
       filename="gz-sim-physics-system"
-      name="gz::sim::systems::Physics"/>
+      name="gz::sim::systems::Physics">
+    </plugin>
     <plugin
       filename="gz-sim-user-commands-system"
-      name="gz::sim::systems::UserCommands"/>
+      name="gz::sim::systems::UserCommands">
+    </plugin>
     <plugin
       filename="gz-sim-scene-broadcaster-system"
-      name="gz::sim::systems::SceneBroadcaster"/>
-    <plugin
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin/usr/share/gz/gz-sim9/worlds/empty.sdf
       filename="gz-sim-contact-system"
-      name="gz::sim::systems::Contact"/>
+      name="gz::sim::systems::Contact">
+    </plugin>
 
-    <!-- Sunlight -->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
       <pose>0 0 10 0 0 0</pose>
@@ -37,7 +37,6 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
 
-    <!-- Ground plane -->
     <model name="ground_plane">
       <static>true</static>
       <link name="link">
@@ -67,4 +66,3 @@
 
   </world>
 </sdf>
-
